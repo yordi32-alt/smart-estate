@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>HeavenRise Realty</title>
+ <link rel="stylesheet" href="my.css/my.css">
+</head>
+
+<body>
+
+<!-- NAV BAR -->
+<nav class="navbar">
+   <div class="logo">
+      <img src="icons/hv.png" alt="">
+      <h2>HeavenRise Realty</h2>
+   </div>
+
+   <ul class="nav-links">
+      <li><a href="buy.html">Buy</a></li>
+      <li><a href="sell.html">Sell</a></li>
+      <li><a href="rent.html">Rent</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+   </ul>
+
+   
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+   <div class="hero-box">
+      <h1>Your Dream Home Awaits</h1>
+      <p>Find the perfect house with HeavenRise Realty.</p>
+   </div>
+</section>
+
+
+<!-- RECOMMENDED SECTION -->
+<section class="recommended-section">
+    <h2>Recommended Houses</h2>
+
+    <!-- CARD 1 -->
+     <div class="cards">
+    <div class="recommended-card">
+        <div class="recommended-images">
+            <img src="house/h12.jpg" class="img-back">
+            <img src="house/h16.jpg" class="img-front">
+        </div>
+
+        <div class="recommended-info">
+            <h3>Luxury Family House</h3>
+            <p class="price">$1,200 / month</p>
+            <p class="location">Addis Ababa, Bole</p>
+            <button class="view-btn" onclick="showDetails('Luxury Family House', 'Addis Ababa, Bole', '1,200 / month')">View Details</button>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="recommended-card">
+        <div class="recommended-images">
+            <img src="house/h15.jpg" class="img-back">
+            <img src="house/h17.jpg" class="img-front">
+        </div>
+
+        <div class="recommended-info">
+            <h3>Modern Villa</h3>
+            <p class="price">$3,500 / month</p>
+            <p class="location">Addis Ababa, CMC</p>
+            <button class="view-btn" onclick="showDetails('Modern Villa', 'Addis Ababa, CMC', '3,500 / month')">View Details</button>
+        </div>
+    </div>
+     </div>
+
+</section>
+
+
+<!-- POPUP MODAL -->
+<div id="popup" class="popup">
+   <div class="popup-content">
+       <span class="close" onclick="closePopup()">&times;</span>
+       <h2 id="pop-title"></h2>
+       <p><strong>Location:</strong> <span id="pop-location"></span></p>
+       <p><strong>Price:</strong> <span id="pop-price"></span></p>
+       <button onclick="closePopup()" class="close-btn">Close</button>
+   </div>
+</div>
+
+
+
+
+<!-- PROPERTIES -->
+<section class="properties">
+   <h2>Featured Listings</h2>
+   <div class="scroll-container">
+
+   <div class="property-container">
+
+      <div class="property">
+         <img src="house/h4.jpg">
+         <h3>Modern Family House</h3>
+         <p>3 Bed • 2 Bath • Addis Ababa</p>
+         <div class="price">$250,000</div>
+      </div>
+
+      <div class="property">
+         <img src="house/h13.jpg">
+         <h3>Luxury Villa</h3>
+         <p>5 Bed • 4 Bath • Bole</p>
+         <div class="price">$750,000</div>
+      </div>
+
+      <div class="property">
+         <img src="house/h11.jpg">
+         <h3>COZY APARTMENT</h3>
+         <p>3 Bed • 2 Bath • CMC</p>
+         <div class="price">$150,000</div>
+      </div>
+      <div class="property">
+         <img src="house/h5.jpg">
+         <h3>ROYAL STATE</h3>
+         <p>5 Bed • 4 Bath • CMC</p>
+         <div class="price">$250,000</div>
+      </div>
+      <div class="property">
+         <img src="house/h10.jpg">
+         <h3>HISTORICAL House</h3>
+         <p>6 Bed • 4 Bath • CMC</p>
+         <div class="price">$300,000</div>
+      </div>
+      <div class="property">
+         <img src="house/h3.jpg">
+         <h3>MINIMAL APARTMENT</h3>
+         <p>4 Bed • 4 Bath • CMC</p>
+         <div class="price">$125,000</div>
+      </div>
+      <div class="property">
+         <img src="house/h9.jpg">
+         <h3>LITTEL GARDEN Home</h3>
+         <p>3 Bed • 3 Bath • CMC</p>
+         <div class="price">$100,000</div>
+      </div>
+   </div>
+   </div>
+</section>
+
+<footer>
+    <p>© 2025 HeavenRise Realty. All Rights Reserved.</p>
+
+    <div class="social-links">
+        <a href="https://www.tiktok.com" target="_blank"><img src="icons/tiktok (1).png" width="32"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="icons/instagram.png" width="32"></a>
+        <a href="https://t.me" target="_blank"><img src="icons/telegram.png" width="32"></a>
+    </div>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script src="my.js"></script>
+s
+
+</body>
+</html>

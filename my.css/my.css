@@ -1,0 +1,426 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        
+        }
+
+        /* NAVIGATION */ 
+        .navbar {
+            width: 100%;
+            padding: 15px 40px;
+            background: #333232;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e0f569;
+            position: fixed;
+            color: rgb(194, 241, 245);
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 4px 2px 5px #f6ee5a;
+            font-size: 5px;
+            
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 5px;
+            
+         }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 17px;
+            
+        
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #dcf2f6;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1974D2;
+        }
+
+        .signup-btn {
+            padding: 8px 15px;
+            background: #1974D2;
+            color: white;
+            border-radius: 7px;
+        }
+
+        .signup-btn:hover {
+            background: #125a9e;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            background:url(../house/h2.jpg) center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero-box {
+         padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .hero-box h1 {
+            font-size: 55px;
+            color: #d5e7f7;
+            text-shadow: 5px 5px 3px rgb(50, 49, 49);
+        }
+
+        .hero-box p {
+            font-size: 20px;
+            margin: 10px 0 20px;
+            color: #e6f482;
+            text-shadow: 5px 7px 5px black;
+        }
+        /* Recommended Section */
+ .recommended-section {
+    padding: 40px 20px;
+    background-color: rgb(234, 247, 249);
+    border-radius: 10%;
+    box-shadow: 2px 3px 3px rgb(39, 38, 38);
+    
+}
+
+.recommended-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;}
+    .cards{
+        display: flex;
+        gap: 20px;
+    }
+
+/* Card layout */
+.recommended-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    /* margin-bottom: 50px; */
+    flex-wrap: wrap;
+}
+
+/* Overlapping Images */
+.recommended-images {
+    position: relative;
+    width: 300px;
+    height: 250px;
+}
+
+.recommended-images img {
+    width: 230px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(249, 247, 247, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.img-back {
+    position: absolute;
+    top: 20px;
+    left: 0;
+
+}
+
+.img-front {
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+
+/* Hover animation */
+.recommended-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Right side info */
+
+.recommended-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.recommended-info .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0A5EF7;
+}
+
+.recommended-info .location {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.view-btn {
+    background-color: #0A5EF7;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background-color: #084ac5;
+}
+
+
+        /* PROPERTY SECTION */
+        .properties {
+            padding: 60px 40px;
+            /* background: #fdfefe; */
+        
+        }
+
+        .properties h2 {
+            /* text-align: center; */
+            font-size: 35px;
+            color: #1974D2;
+            margin-bottom: 40px;
+        }
+.scroll-container{
+    display: flex;
+    overflow: auto;
+}
+
+ .property-container {
+    display: flex;
+    gap: 15px;
+        
+ }
+        
+        
+
+        .property {
+            width: 300px;
+            background: rgb(247, 248, 248);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 2px 10px 5px rgba(0,0,0,0.1);
+        }
+
+        .property img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property .info {
+            padding: 15px;
+        }
+
+        .property .info h3 {
+            font-size: 20px;
+        }
+
+        .property .info p {
+            color: #555;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .property .info .price {
+            font-size: 18px;
+            color: #1974D2;
+            font-weight: bold;
+        }
+        footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+    margin-top: 40px;
+}
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(100%);
+    transition: .3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+    filter: brightness(180%);
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #00000080;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.close-btn {
+    padding: 8px 15px;
+    background: #0a73ff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+
+/* Phones (max-width 600px) */
+@media (max-width: 600px) {
+
+    /* Navbar */
+    .nav-links {
+       display: none;
+       flex-direction: column;
+       background: rgb(37, 37, 37);
+       width: 100%;
+       text-align: center;
+       padding: 20px 0;
+       position: absolute;
+       left: 0;
+       top: 70px;
+       box-shadow: 0 3px 8px #00000030;
+    }
+    .nav-links.open {
+       display: flex;
+    }
+
+    .menu-icon {
+       display: block;
+
+    /* Hero Section */
+    .hero-box h1 {
+        font-size: 22px;
+    }
+
+    .hero-box p {
+        font-size: 14px;
+    }
+
+    .hero-box button {
+        padding: 8px 16px;
+    }
+
+    /* Recommended Houses */
+    .rec-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Property Cards */
+    .property-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .property img, .rec-card img {
+        height: 180px;
+    }
+
+    /* Popup */
+    .popup-content {
+        width: 90%;
+        max-height: 90%;
+        padding: 12px;
+    }
+
+    .gallery {
+        height: 160px;
+    }
+
+    .prev, .next {
+        padding: 5px 8px;
+        font-size: 18px;
+    }
+}
+}
+
+/* Tablets (600px - 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+
+    .rec-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .property-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popup-content {
+        width: 70%;
+    }
+
+    .gallery {
+        height: 220px;
+    }
+}
+
+/* Laptops & Large Screens */
+@media (min-width: 900px) {
+
+    .rec-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .property-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery {
+        height: 250px;
+    }
+}
+
+
+  .error {
+    border: 1.5px solid red;
+}
+
+.error::placeholder {
+    color: rgb(244, 79, 79);}
+
+
+
+        
+
+        

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy - HeavenRise Realty</title>
+    <link rel="stylesheet" href="my.css/my.css">
+    <style>
+    
+
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(248, 251, 252);
+        }
+
+        h1 {
+            text-align: center;
+            padding: 80px 20px 20px; /* Added top padding for navbar */
+            color: #0077ff;
+        }
+
+        /* Search Box */
+        .search-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            background: #0077ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Property Cards */
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .property {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow:3px 5px 10px rgba(9, 8, 8, 0.1);
+        }
+
+        .property img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .property h3, .property p {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .property button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #0077ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media(max-width: 800px){
+     .search-box input {
+                width: 90%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">
+        <img src="icons/hv.png" alt="HeavenRise Realty Logo">
+        <h2>HeavenRise Realty</h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="rent.html">Rent</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+    </ul>
+     <!-- <div class="menu-icon" id="menuBtn">☰</div> -->
+</nav>
+
+<h1>Buy Your Dream Home</h1>
+
+<!-- Search Section -->
+<div class="search-box">
+    <input type="text" id="location" placeholder="Search by location">
+    <input type="text" id="minPrice" placeholder="Min price">
+    <input type="text" id="maxPrice" placeholder="Max price">
+    <button id="searchBtn">Search</button>
+</div>
+
+<!-- Properties -->
+<div class="container">
+    <div class="property" data-location="Addis Ababa, Bole" data-price="120000">
+        <img src="house/h1.jpg" alt="House">
+        <h3>$120,000</h3>
+        <p>Addis Ababa, Bole</p>
+        <p>3 Beds • 2 Baths • 140 sqm</p>
+        <button onclick="viewImage('house/h1.jpg')">View Details</button>
+
+        
+
+    </div>
+
+    <div class="property" data-location="Addis Ababa, CMC" data-price="95000">
+        <img src="house/h6.jpg" alt="House">
+        <h3>$95,000</h3>
+        <p>Addis Ababa, CMC</p>
+        <p>2 Beds • 1 Bath • 110 sqm</p>
+        <button onclick="viewImage('house/h6.jpg')">View Details</button>
+
+    </div>
+
+    <div class="property" data-location="Addis Ababa, Ayat" data-price="200000">
+        <img src="house/h7.jpg" alt="House">
+        <h3>$200,000</h3>
+        <p>Addis Ababa, Ayat</p>
+        <p>4 Beds • 3 Baths • 200 sqm</p>
+        <button onclick="viewImage('house/h7.jpg')">View Details</button>
+    </div>
+
+    <div class="property" data-location="BAHRDAR, Ldeta" data-price="250000">
+        <img src="house/h8.jpg" alt="House">
+        <h3>$250,000</h3>
+        <p>BAHRDAR, Ldeta</p>
+        <p>5 Beds • 3 Baths • 500 sqm</p>
+        <button onclick="viewImage('house/h8.jpg')">View Details</button>
+    </div>
+    <div class="property" data-location="Addis Ababa,Tafo " data-price="500000">
+        <img src="house/h14.jpg" alt="House">
+        <h3>$500,000</h3>
+        <p>Addis Ababa, Tafo</p>
+        <p>4 Beds • 3 Baths • 200 sqm</p>
+        <button onclick="viewImage('house/h14.jpg')">View Details</button>
+    </div>
+    <div class="property" data-location="Addis Ababa, Bole" data-price="300000">
+        <img src="house/h18.jpg" alt="House">
+        <h3>$300,000</h3>
+        <p>Addis Ababa, Bole</p>
+        <p>6 Beds • 5 Baths • 500 sqm</p>
+        <button onclick="viewImage('house/h18.jpg')">View Details</button>
+    </div>
+    <div class="property" data-location="Addis Ababa, Ayat" data-price="600000">
+        <img src="house/h12.jpg" alt="House">
+        <h3>$600,000</h3>
+        <p>Addis Ababa, Ayat</p>
+        <p>10 Beds • 6 Baths • 600 sqm</p>
+        <button onclick="viewImage('house/h12.jpg')">View Details</button>
+    </div>
+    <div class="property" data-location="Addis Ababa, Bole" data-price="800000">
+        <img src="house/h13.jpg" alt="House">
+        <h3>$800,000</h3>
+        <p>Addis Ababa, Bole</p>
+        <p>8 Beds • 5 Baths • 900 sqm</p>
+        <button onclick="viewImage('house/h13.jpg')">View Details</button>
+
+    </div>
+</div>
+
+<footer>
+    © 2025 HeavenRise Realty — All Rights Reserved
+</footer>
+
+<script src="my.js"></script>
+
+</body>
+</html>

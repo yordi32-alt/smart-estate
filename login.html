@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - HeavenRise Realty</title>
+    <link rel="stylesheet" href="my.css/my.css">
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            background: #f4f7ff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0077ff;
+            margin-top: 40px;
+        }
+
+        .form-box {
+            width: 350px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+
+        .form-box input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-box button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #0077ff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-box p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .form-box a {
+            color: #0077ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="icons/hv.png" alt="HeavenRise Realty Logo">
+        <h2>HeavenRise Realty</h2>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="rent.html">Rent</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+    </ul>
+
+    <!-- <div class="menu-icon" id="menuBtn">☰</div> -->
+</nav>
+
+<h1>Login to Your Account</h1>
+
+<div class="form-box">
+    <input type="email" id="loginEmail" placeholder="Email Address" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+
+    <button id="loginBtn">Login</button>
+
+    <p>Don't have an account? <a href="signup.html">Create one</a></p>
+</div>
+
+<footer>
+    © 2025 HeavenRise Realty — All Rights Reserved
+</footer>
+
+<script src="my.js"></script>
+<script>
+    // LOGIN BUTTON ACTION
+let loginInputs = document.querySelectorAll(".form-box input");
+
+document.getElementById("loginBtn").addEventListener("click", function () {
+    let allFilled = true;
+
+    loginInputs.forEach(input => {
+        if (input.value.trim() === "") {
+            input.classList.add("error");
+            input.dataset.oldPlaceholder = input.placeholder;
+            input.placeholder = "This field is required";
+            allFilled = false;
+        }
+    });
+
+    if (allFilled) {
+        alert("Login successful!");
+        window.location.href = "index.html";
+    }
+});
+
+loginInputs.forEach(input => {
+    input.addEventListener("input", function () {
+        this.classList.remove("error");
+        if (this.dataset.oldPlaceholder) {
+            this.placeholder = this.dataset.oldPlaceholder;
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>

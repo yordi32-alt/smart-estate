@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sell - HeavenRise Realty</title>
+    <link rel="stylesheet" href="my.css/my.css">
+    <style>
+        
+    
+        body {
+            font-family: Arial;
+            background-color: #fff8f0;
+            /* margin : 0;
+            padding: 0; */
+        }
+
+        h1 {
+
+            text-align: center;
+            padding: 80px 20px 20px;
+            color: #1487fa;
+        }
+
+        .intro {
+            text-align: center;
+            margin-top: 0px;
+            padding: 0 20px 20px 20px;
+            color: #201f1f;
+            font-size: 18px;
+        }
+
+        .form-box {
+            width: 350px;
+            margin: auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 2px 5px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-box input, .form-box textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+        }
+
+        .form-box button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #2566f4;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+      
+
+
+
+</style>
+</head>
+<body>
+<nav class="navbar">
+        <div class="logo">
+            <img src="icons/hv.png" alt="HeavenRise Realty Logo">
+            <h2>HeavenRise Realty</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="buy.html">Buy</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="rent.html">Rent</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+        </ul>
+         <!-- <div class="menu-icon" id="menuBtn">☰</div> -->
+    </nav>
+<h1>Sell Your Property</h1>
+    <p class="intro">
+
+        Fill in the details below and list your property with HeavenRise Realty.
+    </p>
+
+    <div class="form-box">
+        <input type="text" placeholder="Your Name" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="text" placeholder="Property Location" required>
+        <input type="text" placeholder="Expected Price" required>
+        <textarea rows="4" placeholder="Property Description"></textarea>
+        <button id="submitBtn">Submit Property</button>
+
+    </div>
+
+    <footer>
+        © 2025 HeavenRise Realty — All Rights Reserved
+    </footer>
+    <script src="my.js"></script>
+    <script>
+    let inputs = document.querySelectorAll(".form-box input, .form-box textarea");
+
+document.getElementById("submitBtn").addEventListener("click", function () {
+    let allFilled = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            input.classList.add("error");
+            input.dataset.oldPlaceholder = input.placeholder;
+            input.placeholder = "This field is required";
+            allFilled = false;
+        }
+    });
+
+    if (allFilled) {
+        alert("Property submitted successfully! We will contact you soon.");
+    }
+});
+
+// Remove error when user starts typing
+inputs.forEach(input => {
+    input.addEventListener("input", function () {
+        if (this.classList.contains("error")) {
+            this.classList.remove("error");
+            if (this.dataset.oldPlaceholder) {
+                this.placeholder = this.dataset.oldPlaceholder;
+            }
+        }
+    });
+});
+
+
+    </script>
+
+</body>
+</html>
