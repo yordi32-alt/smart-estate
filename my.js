@@ -12,11 +12,25 @@ function closePopup() {
 
 
 // MOBILE MENU
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.querySelector(".nav-links");
-menuBtn.addEventListener("click", () => {
-   navLinks.classList.toggle("open");
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Auto-close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 });
+
+
 // buy
  document.getElementById('searchBtn').addEventListener('click', () => {
         const locationInput = document.getElementById('location').value.toLowerCase();
@@ -36,9 +50,12 @@ menuBtn.addEventListener("click", () => {
             }
         });
     });
+
     function viewImage(imageSrc) {
     let popup = window.open("", "_blank");
     popup.document.write(`<img src="${imageSrc}" style="width:100%; height:auto;">`);
 }
+
+
 
    

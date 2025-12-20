@@ -3,87 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <title>Buy - HeavenRise Realty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="my.css/my.css">
     <style>
     
+/* =========================
+   GLOBAL
+========================= */
+:root {
+    --main: #0A5EF7;
+    --dark: #222;
+    --bg: #f4f8fb;
+}
 
-        body {
-            font-family: Arial;
-            background-color: #fef9f3;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        h1 {
-            text-align: center;
-            padding: 80px 20px 20px; /* Added top padding for navbar */
-            color: #0077ff;
-        }
+body {
+    background: linear-gradient(180deg, #f8fbfc, #eef3f8);
+}
 
-        /* Search Box */
-        .search-box {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+/* =========================
+   TITLE
+========================= */
+h1 {
+    text-align: center;
+    padding: 95px 20px 30px;
+    font-size: 36px;
+    color: var(--main);
+    animation: fadeDown 1s ease;
+}
 
-        .search-box input {
-            padding: 10px;
-            margin: 5px;
-            width: 200px;
-        }
+/* =========================
+   SEARCH BAR (MODERN)
+========================= */
+.search-box {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.12);
+    animation: fadeUp 1s ease;
+}
 
-        .search-box button {
-            padding: 10px 20px;
-            background: #0077ff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+.search-box input {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
 
-        /* Property Cards */
-        .container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px;
-            justify-content: center;
-        }
+.search-box button {
+    background: linear-gradient(135deg, var(--main), #084ac5);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s;
+}
 
-        .property {
-            width: 250px;
-            border: 1px solid #fdfdfd;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow:3px 5px 10px rgba(9, 8, 8, 0.1);
-        }
+.search-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(10,94,247,.45);
+}
 
-        .property img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
+/* =========================
+   PROPERTY GRID (VERTICAL)
+========================= */
+.container {
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-        .property h3, .property p {
-            padding: 10px;
-            margin: 0;
-        }
+/* =========================
+   PROPERTY CARD
+========================= */
+.property {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0,0,0,.15);
+    transition: transform .4s, box-shadow .4s;
+    animation: fadeUp 1s ease;
+    position: relative;
+}
 
-        .property button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background: #0077ff;
-            color: white;
-            cursor: pointer;
-        }
+.property:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 30px 70px rgba(0,0,0,.25);
+}
 
-        /* Responsive */
-        @media(max-width: 800px){
-     .search-box input {
-                width: 90%;
-                margin: 5px 0;
-            }
-        }
+/* Image */
+.property img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* Price badge */
+.property h3 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, var(--main), #084ac5);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+/* Info text */
+.property p {
+    padding: 6px 18px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Button */
+.property button {
+    margin: 16px;
+    padding: 13px;
+    width: calc(100% - 32px);
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, var(--main), #084ac5);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.property button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(10,94,247,.5);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 70px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    h1 { font-size: 30px; }
+
+    .search-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 26px; }
+
+    .search-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #0e1117;
+    }
+
+    .search-box,
+    .property {
+        background: #1c2230;
+        color: white;
+    }
+
+    .property p {
+        color: #ccc;
+    }
+
+    footer {
+        background: black;
+    }
+}
+
+       
     </style>
 </head>
 <body>
@@ -100,7 +235,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
     </ul>
-     <!-- <div class="menu-icon" id="menuBtn">☰</div> -->
+     <div class="menu-icon" id="menuBtn">☰</div>
 </nav>
 
 <h1>Rent Home</h1>
@@ -120,7 +255,7 @@
         <h3>$500</h3>
         <p>Addis Ababa, Bole</p>
         <p>3 Beds • 2 Baths • 100 sqm</p>
-        <button onclick="viewImage('house/photo_r1')">View Details</button>
+        <button onclick="viewImage('house/photo_r1.jpg')">View Details</button>
 
         
 
@@ -131,7 +266,7 @@
         <h3>$350</h3>
         <p>Addis Ababa, Gurd shola</p>
         <p>2 Beds • 1 Bath • 110 sqm</p>
-        <button onclick="viewImage('house/photo_r2')">View Details</button>
+        <button onclick="viewImage('house/photo_r2.jpg')">View Details</button>
 
     </div>
 
@@ -140,7 +275,7 @@
         <h3>$800</h3>
         <p>Addis Ababa, Ayat</p>
         <p>4 Beds • 3 Baths • 140 sqm</p>
-        <button onclick="viewImage('house/photo_r3')">View Details</button>
+        <button onclick="viewImage('house/photo_r3.jpg')">View Details</button>
     </div>
 
     <div class="property" data-location="Addis Ababa,saris" data-price="900">
@@ -157,6 +292,61 @@
         <p>4 Beds • 3 Baths • 200 sqm</p>
         <button onclick="viewImage('house/photo r5.jpg')">View Details</button>
     </div>
+     <div class="property" data-location="Addis Ababa,Tafo " data-price="50000">
+        <img src="house/h14.jpg" alt="House">
+        <h3>$50,000</h3>
+        <p>Addis Ababa, Tafo</p>
+        <p>4 Beds • 3 Baths • 200 sqm</p>
+        <button onclick="viewImage('house/h14.jpg')">View Details</button>
+    </div>
+    <div class="property" data-location="Addis Ababa, Bole" data-price="80000">
+        <img src="house/h18.jpg" alt="House">
+        <h3>$80,000</h3>
+        <p>Addis Ababa, Bole</p>
+        <p>6 Beds • 5 Baths • 500 sqm</p>
+        <button onclick="viewImage('house/h18.jpg')">View Details</button>
+    </div>
+    <div class="property" data-location="Addis Ababa, Ayat" data-price="50000">
+        <img src="house/h12.jpg" alt="House">
+        <h3>$50,000</h3>
+        <p>Addis Ababa, Ayat</p>
+        <p>10 Beds • 6 Baths • 600 sqm</p>
+        <button onclick="viewImage('house/h12.jpg')">View Details</button>
+    </div>
+    <div class="property" data-location="Addis Ababa, Bole" data-price="30000">
+        <img src="house/h13.jpg" alt="House">
+        <h3>$30,000</h3>
+        <p>Addis Ababa, Bole</p>
+        <p>8 Beds • 5 Baths • 900 sqm</p>
+        <button onclick="viewImage('house/h13.jpg')">View Details</button>
+
+    </div>
+    <div class="property" data-location="Addis Ababa, Cmc" data-price="70000">
+        <img src="house/h5.jpg" alt="House">
+        <h3>$70,000</h3>
+        <p>Addis Ababa, cmc</p>
+        <p>4 Beds • 3 Baths • 900 sqm</p>
+        <button onclick="viewImage('house/h5.jpg')">View Details</button>
+
+    </div>
+    <div class="property" data-location="Addis Ababa, Bole" data-price="10000">
+        <img src="house/h2.jpg" alt="House">
+        <h3>$10000</h3>
+        <p>Addis Ababa, Bole</p>
+        <p>8 Beds • 4 Baths • 500 sqm</p>
+        <button onclick="viewImage('house/h2.jpg')">View Details</button>
+
+    </div>
+    <div class="property" data-location="Addis Ababa, Tafo" data-price="9000">
+        <img src="house/h3.jpg" alt="House">
+        <h3>$9000</h3>
+        <p>Addis Ababa, Tafo</p>
+        <p>7 Beds • 5 Baths • 900 sqm</p>
+        <button onclick="viewImage('house/h3.jpg')">View Details</button>
+
+    </div>
+    
+
 </div>
 
 <footer>
